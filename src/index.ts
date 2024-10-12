@@ -50,7 +50,7 @@ app.post('/message', async (req: Request, res: Response):Promise<void> => {
     }
 })
 
-app.listen(3000, async () => {
+app.listen(3001, async () => {
     const chat = await model.startChat({
         generationConfig:{
             responseMimeType: "text/plain",
