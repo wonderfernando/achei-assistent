@@ -58,9 +58,9 @@ app.listen(3001, async () => {
         }
     });
     chatSession = chat
-    const res = await chat?.sendMessage("voce é um assistente que vai me ajudar a estudar,dê um exemplo, responda de forma direta e formal")
+    const res = await chat?.sendMessage("voce é um assistente que vai me ajudar a estudar,dê um exemplo, responda de forma direta e formal, eu falo português de portugal, e sempre que é possivel use dados relacionado a angola porque eu sou angolano, se não for possivel use o contexto de portugal") 
     const candidates = await res.response.candidates
     const text = await res.response.text()
     console.log(candidates![0].content.parts[0].text?.replace(/\*/g, ''))
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port 3001');
 })
