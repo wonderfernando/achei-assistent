@@ -3,7 +3,7 @@ import express, { Request, Response } from 'express';
 import { z } from 'zod';
 import { ChatSession } from '@google/generative-ai';
 import cors from 'cors'
-export const GEMINI_KEY = "AIzaSyCfJlY6GIkgAQ1vuvcItVjSeub39odCAhQ"
+export const GEMINI_KEY = "AIzaSyD4Fmatsj4326qAu8O-JIKI7lre1inOaBI"
 
 
 const app = express();
