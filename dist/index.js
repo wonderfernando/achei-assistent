@@ -17,7 +17,7 @@ const generative_ai_1 = require("@google/generative-ai");
 const express_1 = __importDefault(require("express"));
 const zod_1 = require("zod");
 const cors_1 = __importDefault(require("cors"));
-exports.GEMINI_KEY = "AIzaSyDvHS4B8wGsn5mqGLsi2tBRBI_iwBW7Q-M";
+exports.GEMINI_KEY = "AIzaSyD4Fmatsj4326qAu8O-JIKI7lre1inOaBI";
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
@@ -57,7 +57,7 @@ app.post('/message', (req, res) => __awaiter(void 0, void 0, void 0, function* (
         res.status(500).json({ error: "Internal server error" });
     }
 }));
-app.listen(3000, () => __awaiter(void 0, void 0, void 0, function* () {
+app.listen(3001, () => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     const chat = yield model.startChat({
         generationConfig: {
@@ -66,9 +66,9 @@ app.listen(3000, () => __awaiter(void 0, void 0, void 0, function* () {
         }
     });
     chatSession = chat;
-    const res = yield (chat === null || chat === void 0 ? void 0 : chat.sendMessage("voce é um assistente que vai me ajudar a estudar,dê um exemplo, responda de forma direta e formal"));
+    const res = yield (chat === null || chat === void 0 ? void 0 : chat.sendMessage("voce é um assistente que vai me ajudar a estudar,dê um exemplo, responda de forma direta e formal, eu falo português de portugal, e sempre que é possivel use dados relacionado a angola porque eu sou angolano, se não for possivel use o contexto de portugal"));
     const candidates = yield res.response.candidates;
     const text = yield res.response.text();
     console.log((_a = candidates[0].content.parts[0].text) === null || _a === void 0 ? void 0 : _a.replace(/\*/g, ''));
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port 3001');
 }));
